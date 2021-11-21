@@ -1,0 +1,15 @@
+<nav class="navbar has-shadow is-white">
+  <div class="navbar-brand">
+    <a class="navbar-item">AQUI VA EL LOGO</a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      <% if user_signed_in? %>
+        <%= link_to "Sign off",destroy_user_session_path, :method => :delete, class: "navbar-item" %>
+      <%else %>
+        <%= link_to "Login",new_user_session_path, class: "navbar-item" %>
+        <%= link_to "Sign up",new_user_registration_path, class: "navbar-item" %>
+      <%end %>
+    </div>
+  </div>
+</nav>
