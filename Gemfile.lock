@@ -277,6 +277,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sqlite3 (1.4.2)
     stackdriver (0.21.1)
       google-cloud-error_reporting (~> 0.41)
       google-cloud-logging (~> 2.1)
@@ -333,6 +334,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   spring
+  sqlite3 (~> 1.4.2)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

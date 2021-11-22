@@ -1,0 +1,87 @@
+<p id="notice"><%= notice %></p>
+<section class="hero is-medium is-black">
+     <div class="hero-body">
+       <div class="container">
+         <div class="columns">
+           <div class="column is-8-desktop is-offset-2-desktop">
+             <h1 class="title is-2 is-spaced">Hello <%= current_user.first_name %>!!</h1>
+             <% if current_user.employee_id.blank? %>
+               <h2 class="subtitle is-4">
+                 Please create your <strong>Employee acount</strong> to use all our funtionalities
+               </h2>
+               <%= link_to 'Create my employee profile', new_employee_path, class: "button is-link" %>
+              <% end %>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+   <section class="section">
+     <div class="container">
+       <div class="columns">
+         <div class="column is-8-desktop is-offset-2-desktop">
+           <div class="content">
+             <h3 class="title is-3">About the company</h3>
+             <p>
+               We are a platform for calculating your settlement in a safe and timely manner.
+               <br>
+               We combine technology to provide effective solutions to all our clients. <strong>Thank you for being a part of us</strong>
+             </p>
+           </div>
+           <table class="table is-bordered is-fullwidth">
+             <h3 class="title is-3">Our team</h3>
+             <thead>
+               <tr>
+                 <th>Name</th>
+                 <th>Skills</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <th>Briannys Paez</th>
+                 <td>
+                   <code>Frontend developer</code>
+                   <code>Web Designer</code>
+                 </td>
+               </tr>
+               <tr>
+                 <th>David Lopez</th>
+                 <td>
+                   <code>Full Stack developer</code>
+                   <code>Data Scientist</code>
+                 </td>
+               </tr>
+               <tr>
+                 <th>Paula Anaya</th>
+                 <td>
+                   <code>Angular developer</code>
+                   <code>Database design</code>
+                 </td>
+               </tr>
+               <tr>
+                 <th>Jordan Soto</th>
+                 <td>
+                   <code>Software architect</code>
+                   <code>Data Scientist</code>
+                 </td>
+               </tr>
+               <tr>
+                 <th>Diana Rios</th>
+                 <td>
+                   <code>Java developer</code>
+                   <code>Need to learn GitHub</code>
+                 </td>
+               </tr>
+               <tr>
+                 <th>Sergio Peña</th>
+                 <td>
+                   <code>Backend developer</code>
+                   <code>Data Scientist </code>
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+       </div>
+     </div>
+   </section>

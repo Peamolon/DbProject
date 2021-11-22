@@ -12,28 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :joind_date %>
+    <%= form.label :joind_date, class: "label" %>
     <%= form.date_select :joind_date %>
   </div>
 
   <div class="field">
-    <%= form.label "Eps" %>
+    <%= form.label "Eps", class: "label" %>
     <%= form.select :health_care, options_for_select(@eps_entities) %>
   </div>
 
-  <div class="field">
-    <%= form.label :payroll_id %>
-    <%= form.number_field :payroll_id %>
-  </div>
 
   <div class="field">
-    <%= form.label :novelty_id %>
-    <%= form.number_field :novelty_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+    <%= form.label "Charge", class: "label" %>
+    <%= form.grouped_collection_select :held_position_id, Dependency.order(:name_dependency), :held_positions,:name_dependency,:id, :name_position%>
   </div>
 
   <div class="actions">

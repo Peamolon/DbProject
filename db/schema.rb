@@ -12,13 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2021_11_21_165007) do
 
-  create_table "dependencies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "dependencies", force: :cascade do |t|
     t.string "name_dependency"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "employees", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "employees", force: :cascade do |t|
     t.string "full_name"
     t.date "join_date"
     t.string "health_care"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_11_21_165007) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "held_positions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "held_positions", force: :cascade do |t|
     t.string "name_position"
     t.integer "dependency_id"
     t.integer "salary"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_11_21_165007) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

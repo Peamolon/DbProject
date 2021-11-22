@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 <% if current_user.employee_id.blank? %>
+
   <h1>Termina de crear tu cuenta para acceder a las vistas</h1>
   <%= link_to 'Create my employee profile', new_employee_path, class: "button is-primary" %>
 <%else %>
