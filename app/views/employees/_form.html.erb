@@ -12,18 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :full_name %>
-    <%= form.text_field :full_name %>
-  </div>
-
-  <div class="field">
     <%= form.label :joind_date %>
     <%= form.date_select :joind_date %>
   </div>
 
   <div class="field">
-    <%= form.label :health_care %>
-    <%= form.text_field :health_care %>
+    <%= form.label "Eps" %>
+    <%= form.select :health_care, options_for_select(@eps_entities) %>
   </div>
 
   <div class="field">

@@ -14,6 +14,7 @@ class EmployeesController < ApplicationController
   # GET /employees/new
   def new
     @employee = Employee.new
+    @eps_entities = [["Nueva Eps"], ["Compensar"], ["Sanitas"], ["Famisanar"], ["Salud Total"], ["Suramerica"]]
   end
 
   # GET /employees/1/edit

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_position: MyString
+  dependency_id: 1
+  salary: 
+
+two:
+  name_position: MyString
+  dependency_id: 1
+  salary: 
