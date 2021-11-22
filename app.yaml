@@ -3,7 +3,7 @@ env: flex
 runtime: ruby
 
 env_variables:
-  SECRET_KEY_BASE: 90edf9b94e26525d06074331fac43ff6ae6943800a3e5bb7c47809f63232c4b7b0454a447abff3cd4b364f2cd3f00e633bb5f521304f4709e97cf6013a29acd9
+  SECRET_KEY_BASE: 928f77a3d86145d8fc16a5c1a1d9f7c8fd58637f356760d63f7d0ca090f9242734b14d4a7881f1d9b976a38eab6cee5d035a1c5a5473739f3b35748f62a8e205
 
 beta_settings:
   cloud_sql_instances: dbproyectfinal:us-central1:db2021
