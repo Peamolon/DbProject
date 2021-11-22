@@ -1,0 +1,9 @@
+entrypoint: bundle exec rackup --port $PORT
+env: flex
+runtime: ruby
+
+env_variables:
+  SECRET_KEY_BASE: 90edf9b94e26525d06074331fac43ff6ae6943800a3e5bb7c47809f63232c4b7b0454a447abff3cd4b364f2cd3f00e633bb5f521304f4709e97cf6013a29acd9
+
+beta_settings:
+  cloud_sql_instances: dbproyectfinal:us-central1:db2021

@@ -61,6 +61,11 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  config.google_cloud.use_trace = false
+  config.google_cloud.use_logging = false
+  config.google_cloud.use_error_reporting = false
+  config.google_cloud.use_debugger = false
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
