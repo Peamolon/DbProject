@@ -6,4 +6,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def fully_signed?
+    self.employee_id.present?
+  end
 end

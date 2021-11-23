@@ -23,10 +23,12 @@ class EmployeesController < ApplicationController
 
   # POST /employees or /employees.json
   def create
+    @eps_entities = [["Nueva Eps"], ["Compensar"], ["Sanitas"], ["Famisanar"], ["Salud Total"], ["Suramerica"]]
     @employee = Employee.new(employee_params)
-
+    @employee.user_id = current_user.id
     respond_to do |format|
       if @employee.save
+        current_user.update(employee_id: @employee.id)
         format.html { redirect_to @employee, notice: "Employee was successfully created." }
         format.json { render :show, status: :created, location: @employee }
       else
@@ -40,7 +42,7 @@ class EmployeesController < ApplicationController
   def update
     respond_to do |format|
       if @employee.update(employee_params)
-        format.html { redirect_to @employee, notice: "Employee was successfully updated." }
+        format.html { redirect_to root_path, notice: "Employee was successfully updated." }
         format.json { render :show, status: :ok, location: @employee }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -66,6 +68,6 @@ class EmployeesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def employee_params
-      params.require(:employee).permit(:full_name, :joind_date, :health_care, :payroll_id, :novelty_id, :user_id)
+      params.require(:employee).permit(:full_name, :join_date, :payroll_id, :novelty_id, :user_id, :salary, :held_position_id)
     end
 end

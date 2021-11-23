@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_21_165007) do
+ActiveRecord::Schema.define(version: 2021_11_22_235548) do
 
   create_table "dependencies", force: :cascade do |t|
     t.string "name_dependency"
@@ -27,12 +27,13 @@ ActiveRecord::Schema.define(version: 2021_11_21_165007) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "held_position_id"
+    t.integer "salary"
   end
 
   create_table "held_positions", force: :cascade do |t|
     t.string "name_position"
     t.integer "dependency_id"
-    t.integer "salary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

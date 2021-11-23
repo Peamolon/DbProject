@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :joind_date, class: "label" %>
-    <%= form.date_select :joind_date %>
+    <%= form.label :join_date, class: "label" %>
+    <%= form.date_select :join_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :salary, class: "label" %>
+    <%= form.number_field :salary %>
   </div>
 
   <div class="field">

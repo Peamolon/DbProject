@@ -4,13 +4,15 @@
        <div class="container">
          <div class="columns">
            <div class="column is-8-desktop is-offset-2-desktop">
-             <h1 class="title is-2 is-spaced">Hello <%= current_user.first_name %>!!</h1>
-             <% if current_user.employee_id.blank? %>
-               <h2 class="subtitle is-4">
-                 Please create your <strong>Employee acount</strong> to use all our funtionalities
-               </h2>
-               <%= link_to 'Create my employee profile', new_employee_path, class: "button is-link" %>
-              <% end %>
+             <% if current_user.fully_signed? %>
+               <%= render 'profile', employee: @employee %>
+            <%else %>
+              <h1 class="title is-2 is-spaced">Hello <%= current_user.first_name %>!!</h1>
+              <h2 class="subtitle is-4">
+                Please create your <strong>Employee acount</strong> to use all our funtionalities
+              </h2>
+              <%= link_to 'Create my employee profile', new_employee_path, class: "button is-link" %>
+            <% end %>
            </div>
          </div>
        </div>
@@ -69,7 +71,7 @@
                  <th>Diana Rios</th>
                  <td>
                    <code>Java developer</code>
-                   <code>Need to learn GitHub</code>
+                   <code>She knows GitHub</code>
                  </td>
                </tr>
                <tr>
