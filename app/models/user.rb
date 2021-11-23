@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def fully_signed?
     self.employee_id.present?
   end
+
+  def employee
+    Employee.find(self.employee_id) if self.employee_id.present?
+  end
 end

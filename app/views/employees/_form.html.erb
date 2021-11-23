@@ -23,9 +23,13 @@
 
   <div class="field">
     <%= form.label "Eps", class: "label" %>
-    <%= form.select :health_care, options_for_select(@eps_entities) %>
+    <%= form.select :eps_id, options_for_select(EpsEntity.order(:name_eps).pluck(:name_eps, :id)) %>
   </div>
 
+  <div class="field">
+    <%= form.label "Pensiones", class: "label" %>
+    <%= form.select :afp_entity_id, options_for_select(AfpEntity.order(:afp_name).pluck(:afp_name, :id)) %>
+  </div>
 
   <div class="field">
     <%= form.label "Charge", class: "label" %>

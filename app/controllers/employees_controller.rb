@@ -14,7 +14,6 @@ class EmployeesController < ApplicationController
   # GET /employees/new
   def new
     @employee = Employee.new
-    @eps_entities = [["Nueva Eps"], ["Compensar"], ["Sanitas"], ["Famisanar"], ["Salud Total"], ["Suramerica"]]
   end
 
   # GET /employees/1/edit
@@ -23,7 +22,6 @@ class EmployeesController < ApplicationController
 
   # POST /employees or /employees.json
   def create
-    @eps_entities = [["Nueva Eps"], ["Compensar"], ["Sanitas"], ["Famisanar"], ["Salud Total"], ["Suramerica"]]
     @employee = Employee.new(employee_params)
     @employee.user_id = current_user.id
     respond_to do |format|
@@ -68,6 +66,6 @@ class EmployeesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def employee_params
-      params.require(:employee).permit(:full_name, :join_date, :payroll_id, :novelty_id, :user_id, :salary, :held_position_id)
+      params.require(:employee).permit(:full_name, :join_date, :payroll_id, :novelty_id, :user_id, :salary, :eps_id ,:held_position_id, :afp_entity_id)
     end
 end
