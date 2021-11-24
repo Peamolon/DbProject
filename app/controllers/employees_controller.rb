@@ -4,7 +4,26 @@ class EmployeesController < ApplicationController
 
   # GET /employees or /employees.json
   def index
-    @employees = Employee.all
+    @way = params[:order]
+    if @way == "ASC"
+      @employees = Employee.order('full_name ASC').all
+    else
+      @employees = Employee.order('full_name DESC').all
+    end
+  end
+
+  def by_dependency
+    @way = params[:order_name]
+    if @way == "ASC"
+      @employees = Employee.includes(:dependency).order("dependencies.name_dependency").order('full_name ASC').all
+    else
+      @employees = Employee.includes(:dependency).order("dependencies.name_dependency").order('full_name DESC').all
+    end
+
+  end
+
+  def by_held_position
+    @employees =Employee.includes(:held_position).order("held_positions.name_position")
   end
 
   # GET /employees/1 or /employees/1.json

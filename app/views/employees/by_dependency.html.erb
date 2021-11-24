@@ -2,9 +2,9 @@
 <h1>Employees</h1>
 <h5><strong>Number of employees: </strong><%= @employees.count %></h3>
 
-<%= form_with(url: '/employees', method: 'get', local: true) do |f| %>
-  <%= f.label 'Filter', class: 'label' %>
-  <%= f.select :order, options_for_select(["ASC", "DESC"]) %>
+<%= form_with(url: '/employees/dependency', method: 'get', local: true) do |f| %>
+  <%= f.label 'Dependency', class: 'label' %>
+  <%= f.select :order_name, options_for_select(["ASC", "DESC"]) %>
   <%= f.submit 'Order' %>
 <% end %>
 

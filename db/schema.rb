@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_143725) do
+ActiveRecord::Schema.define(version: 2021_11_24_203949) do
 
   create_table "afp_entities", force: :cascade do |t|
     t.string "afp_name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_143725) do
     t.integer "salary"
     t.integer "eps_id"
     t.integer "afp_entity_id"
+    t.integer "dependency_id"
   end
 
   create_table "eps_entities", force: :cascade do |t|

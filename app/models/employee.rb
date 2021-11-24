@@ -3,6 +3,7 @@ class Employee < ApplicationRecord
   belongs_to :user, foreign_key: "user_id"
   has_one :eps_entity, foreign_key: "eps_id"
   has_one :afp_entity, foreign_key: "afp_entity_id"
+  belongs_to :dependency, foreign_key: "dependency_id"
   before_create :set_full_name
   belongs_to :held_position, foreign_key: "held_position_id"
 
