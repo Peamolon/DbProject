@@ -15,15 +15,42 @@ class EmployeesController < ApplicationController
   def by_dependency
     @way = params[:order_name]
     if @way == "ASC"
-      @employees = Employee.includes(:dependency).order("dependencies.name_dependency").order('full_name ASC').all
+      @employees = Employee.joins(:dependency).order("dependencies.name_dependency").order('full_name ASC').all
     else
-      @employees = Employee.includes(:dependency).order("dependencies.name_dependency").order('full_name DESC').all
+      @employees = Employee.joins(:dependency).order("dependencies.name_dependency").order('full_name DESC').all
     end
 
   end
 
+  def by_eps
+    @way = params[:order_name]
+    if @way == "ASC"
+      @employees = Employee.joins(:held_position, :eps_entity).order('held_positions.name_position ASC', 'eps_entities.name_eps ASC', 'full_name ASC')
+    else
+      @employees = Employee.joins(:held_position, :eps_entity).order('held_positions.name_position ASC', 'eps_entities.name_eps ASC', 'full_name DESC')
+    end
+  end
+
+  def by_pension
+    @way = params[:order_name]
+    if @way == "ASC"
+      @employees = Employee.joins(:held_position, :afp_entity).order('held_positions.name_position ASC', 'afp_entities.afp_name ASC', 'full_name ASC')
+    else
+      @employees = Employee.joins(:held_position, :afp_entity).order('held_positions.name_position ASC', 'afp_entities.afp_name ASC', 'full_name DESC')
+    end
+  end
+
+  def graphics
+  end
+
   def by_held_position
-    @employees =Employee.includes(:held_position).order("held_positions.name_position")
+
+    @way = params[:order_name]
+    if @way == "ASC"
+      @employees =Employee.includes(:held_position).order("held_positions.name_position").order('full_name ASC').all
+    else
+      @employees =Employee.includes(:held_position).order("held_positions.name_position").order('full_name DESC').all
+    end
   end
 
   # GET /employees/1 or /employees/1.json
@@ -43,6 +70,7 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(employee_params)
     @employee.user_id = current_user.id
+    @employee.dependency_id = @employee.held_position.dependency_id
     respond_to do |format|
       if @employee.save
         current_user.update(employee_id: @employee.id)

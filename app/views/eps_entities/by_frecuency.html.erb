@@ -1,0 +1,8 @@
+<h3>Frequency graph by EPS</h3>
+<%= line_chart Employee.joins(:eps_entity).group("eps_entities.name_eps").count %>
+<h3>Frequency graph by pension</h3>
+<%= line_chart Employee.joins(:afp_entity).group("afp_entities.afp_name").count %>
+<h3>Comparative bar graph by EPS and by dependency.</h3>
+<%= column_chart Dependency.joins(:employees => :eps_entity).group(['name_dependency', 'eps_entities.name_eps']).count %>
+<h3>Comparative bar graph by EPS and by pension.</h3>
+<%= column_chart Dependency.joins(:employees => :afp_entity).group(['name_dependency', 'afp_entities.afp_name']).count %>

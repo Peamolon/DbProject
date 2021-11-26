@@ -1,11 +1,14 @@
 class Employee < ApplicationRecord
+  #relationships
   validates :salary, :join_date, presence: true
   belongs_to :user, foreign_key: "user_id"
-  has_one :eps_entity, foreign_key: "eps_id"
-  has_one :afp_entity, foreign_key: "afp_entity_id"
+  belongs_to :eps_entity, foreign_key: "eps_id"
+  belongs_to :afp_entity, foreign_key: "afp_entity_id"
   belongs_to :dependency, foreign_key: "dependency_id"
-  before_create :set_full_name
   belongs_to :held_position, foreign_key: "held_position_id"
+  #call_backs
+  before_create :set_full_name
+
 
   def eps_entity
     EpsEntity.find(self.eps_id) if self.eps_id.present?
