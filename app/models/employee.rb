@@ -18,6 +18,12 @@ class Employee < ApplicationRecord
     AfpEntity.find(self.afp_entity_id) if self.afp_entity_id.present?
   end
 
+  def table_name
+    full_name = self.full_name.split(" ")
+    return "#{self.user.last_name} #{self.user.first_name}"
+
+  end
+
   private
   def set_full_name
     if self.user.present?

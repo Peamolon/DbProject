@@ -8,31 +8,7 @@
   <%= f.submit 'Order' %>
 <% end %>
 
-<table class= "table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Full name</th>
-      <th>Join date</th>
-      <th>Held Position</th>
-      <th>Dependency</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr>
-        <td><%= employee.id %></td>
-        <td><%= employee.full_name %></td>
-        <td><%= employee.join_date %></td>
-        <td><%= employee.held_position.name_position %></td>
-        <td><%= employee.held_position.dependency.name_dependency %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<%= render 'table' %>
 
 
 <%= link_to 'New Employee', new_employee_path %>

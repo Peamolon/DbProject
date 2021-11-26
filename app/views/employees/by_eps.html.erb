@@ -1,31 +1,9 @@
 <h5><strong>Number of employees: </strong><%= @employees.count %></h3>
 <%= form_with(url: '/employees/eps', method: 'get', local: true) do |f| %>
   <%= f.label 'Name order', class: 'label' %>
-  <%= f.select :order_name, options_for_select(["ASC", "DESC"]) %>
+  <%= f.select :order_name, options_for_select(["ASC", "DESC", "DEFAULT"]) %>
   <%= f.submit 'Order' %>
 <% end %>
-<table class= "table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Full name</th>
-      <th>Join date</th>
-      <th>Held Position</th>
-      <th>Eps</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr>
-        <td><%= employee.id %></td>
-        <td><%= employee.full_name %></td>
-        <td><%= employee.join_date %></td>
-        <td><%= employee.held_position.name_position %></td>
-        <td><%= employee.eps_entity.name_eps %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'table' %>
 
 <br>

@@ -5,38 +5,44 @@ class EmployeesController < ApplicationController
   # GET /employees or /employees.json
   def index
     @way = params[:order]
-    if @way == "ASC"
-      @employees = Employee.order('full_name ASC').all
+    if @way == "ASC" || @way.blank?
+      @employees = Employee.joins(:user).order('users.last_name ASC').all
     else
-      @employees = Employee.order('full_name DESC').all
+      @employees = Employee.joins(:user).order('users.last_name DESC').all
     end
   end
 
   def by_dependency
     @way = params[:order_name]
-    if @way == "ASC"
-      @employees = Employee.joins(:dependency).order("dependencies.name_dependency").order('full_name ASC').all
+    if @way.blank? || @way == "DEFAULT"
+      @employees = Employee.joins(:dependency, :user).order("dependencies.name_dependency")
+    elsif @way == "ASC"
+      @employees = Employee.joins(:user).order('users.last_name ASC').all
     else
-      @employees = Employee.joins(:dependency).order("dependencies.name_dependency").order('full_name DESC').all
+      @employees = Employee.joins(:user).order('users.last_name DESC').all
     end
 
   end
 
   def by_eps
     @way = params[:order_name]
-    if @way == "ASC"
-      @employees = Employee.joins(:held_position, :eps_entity).order('held_positions.name_position ASC', 'eps_entities.name_eps ASC', 'full_name ASC')
+    if @way.blank? || @way == "DEFAULT"
+      @employees = Employee.joins(:held_position, :eps_entity).order('held_positions.name_position ASC', 'eps_entities.name_eps ASC')
+    elsif @way == "ASC"
+      @employees = Employee.joins(:user).order('users.last_name ASC').all
     else
-      @employees = Employee.joins(:held_position, :eps_entity).order('held_positions.name_position ASC', 'eps_entities.name_eps ASC', 'full_name DESC')
+      @employees = Employee.joins(:user).order('users.last_name DESC').all
     end
   end
 
   def by_pension
     @way = params[:order_name]
-    if @way == "ASC"
-      @employees = Employee.joins(:held_position, :afp_entity).order('held_positions.name_position ASC', 'afp_entities.afp_name ASC', 'full_name ASC')
+    if @way.blank? || @way == "DEFAULT"
+      @employees = Employee.joins(:held_position, :afp_entity).order('held_positions.name_position ASC', 'afp_entities.afp_name ASC')
+    elsif @way == "ASC"
+      @employees = Employee.joins(:user).order('users.last_name ASC').all
     else
-      @employees = Employee.joins(:held_position, :afp_entity).order('held_positions.name_position ASC', 'afp_entities.afp_name ASC', 'full_name DESC')
+      @employees = Employee.joins(:user).order('users.last_name DESC').all
     end
   end
 
@@ -44,12 +50,13 @@ class EmployeesController < ApplicationController
   end
 
   def by_held_position
-
     @way = params[:order_name]
-    if @way == "ASC"
-      @employees =Employee.includes(:held_position).order("held_positions.name_position").order('full_name ASC').all
+    if @way.blank? || @way == "DEFAULT"
+      @employees =Employee.includes(:held_position).order("held_positions.name_position")
+    elsif @way == "ASC"
+      @employees = Employee.joins(:user).order('users.last_name ASC').all
     else
-      @employees =Employee.includes(:held_position).order("held_positions.name_position").order('full_name DESC').all
+      @employees = Employee.joins(:user).order('users.last_name DESC').all
     end
   end
 

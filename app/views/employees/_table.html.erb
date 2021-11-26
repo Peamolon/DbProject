@@ -1,0 +1,29 @@
+<table class= "table">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Full name</th>
+      <th>Join date</th>
+      <th>Held Position</th>
+      <th>Dependency</th>
+      <th>Eps</th>
+      <th>Pension</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.id %></td>
+        <td><%= employee.table_name.upcase %></td>
+        <td><%= employee.join_date %></td>
+        <td><%= employee.held_position.name_position %></td>
+        <td><%= employee.held_position.dependency.name_dependency %></td>
+        <td><%= employee.eps_entity.name_eps %></td>
+        <td><%= employee.afp_entity.afp_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
