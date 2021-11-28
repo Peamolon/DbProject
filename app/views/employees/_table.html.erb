@@ -9,6 +9,7 @@
         <th>Dependency</th>
         <th>Eps</th>
         <th>Pension</th>
+        <th></th>
       </tr>
     </thead>
 
@@ -22,6 +23,7 @@
           <td><%= employee.held_position.dependency.name_dependency %></td>
           <td><%= employee.eps_entity.name_eps %></td>
           <td><%= employee.afp_entity.afp_name %></td>
+          <td><%= link_to 'Pdf', employee_path(employee.id, format: :pdf) %></td>
         </tr>
       <% end %>
     </tbody>

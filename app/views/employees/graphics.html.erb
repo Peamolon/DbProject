@@ -1,5 +1,4 @@
 <div class="container has-text-centered">
   <%= pie_chart Employee.joins(:dependency).group("dependencies.name_dependency").count %>
-
   <%= column_chart Employee.joins(:held_position).group("held_positions.name_position").count%>
 </div>

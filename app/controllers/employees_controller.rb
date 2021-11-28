@@ -10,6 +10,11 @@ class EmployeesController < ApplicationController
     else
       @employees = Employee.joins(:user).order('users.last_name DESC').all
     end
+    respond_to do |format|
+      format.html
+      format.pdf{ render template: 'employees/index.html.erb', pdf: 'Employees'}
+    end
+
   end
 
   def by_dependency
@@ -20,6 +25,10 @@ class EmployeesController < ApplicationController
       @employees = Employee.joins(:user).order('users.last_name ASC').all
     else
       @employees = Employee.joins(:user).order('users.last_name DESC').all
+    end
+    respond_to do |format|
+      format.html
+      format.pdf{ render template: 'employees/by_dependency.html.erb', pdf: 'Employees'}
     end
 
   end
@@ -33,6 +42,10 @@ class EmployeesController < ApplicationController
     else
       @employees = Employee.joins(:user).order('users.last_name DESC').all
     end
+    respond_to do |format|
+      format.html
+      format.pdf{ render template: 'employees/by_eps.html.erb', pdf: 'Employees'}
+    end
   end
 
   def by_pension
@@ -44,9 +57,23 @@ class EmployeesController < ApplicationController
     else
       @employees = Employee.joins(:user).order('users.last_name DESC').all
     end
+    respond_to do |format|
+      format.html
+      format.pdf{ render template: 'employees/by_pension.html.erb', pdf: 'Employees'}
+    end
   end
 
   def graphics
+    respond_to do |format|
+      format.html
+      format.pdf{ render template: 'employees/graphics.html.erb', pdf: 'Employee graphics'}
+    end
+  end
+
+
+  def generate_pfd
+
+
   end
 
   def by_held_position
@@ -58,10 +85,18 @@ class EmployeesController < ApplicationController
     else
       @employees = Employee.joins(:user).order('users.last_name DESC').all
     end
+    respond_to do |format|
+      format.html
+      format.pdf{ render template: 'employees/by_held_position.html.erb', pdf: 'Employees'}
+    end
   end
 
   # GET /employees/1 or /employees/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf{ render template: 'employees/show.html.erb', pdf: 'Employees'}
+    end
   end
 
   # GET /employees/new

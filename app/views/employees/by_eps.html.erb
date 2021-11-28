@@ -1,5 +1,6 @@
 <div class="container has-text-centered">
   <h5><strong>Number of employees: </strong><%= @employees.count %></h5>
+  <%= link_to 'Generate PDF', employees_eps_path(format: :pdf) %>
   <div class="control has-icons-left has-text-left">
     <%= form_with(url: '/employees/eps', method: 'get', local: true) do |f| %>
       <%= f.label 'Name order', class: 'label' %>
