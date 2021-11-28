@@ -1,10 +1,17 @@
-<h5><strong>Number of employees: </strong><%= @employees.count %></h3>
-<%= form_with(url: '/employees/pension', method: 'get', local: true) do |f| %>
-  <%= f.label 'Name order', class: 'label' %>
-  <%= f.select :order_name, options_for_select(["ASC", "DESC", "DEFAULT"]) %>
-  <%= f.submit 'Order' %>
-<% end %>
-
-<%= render 'table' %>
-
-<br>
+<div class="container has-text-centered">
+  <h5><strong>Number of employees: </strong><%= @employees.count %></h5>
+  <div class="control has-icons-left has-text-left">
+    <%= form_with(url: '/employees/pension', method: 'get', local: true) do |f| %>
+      <%= f.label 'Name order', class: 'label' %>
+      <div class="select">
+        <%= f.select :order_name, options_for_select(["ASC", "DESC", "DEFAULT"]) %>
+        <span class="icon is-left">
+          <i class="fa fa-filter"></i>
+        </span>
+      </div>
+      <%= f.submit 'Order', class: 'button is-black' %>
+    <% end %>
+  </div>
+  <%= render 'table' %>
+  <br>
+</div>

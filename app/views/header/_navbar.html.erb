@@ -1,43 +1,44 @@
-<nav class="navbar has-shadow is-white">
-  <div class="navbar-brand">
-    <img class="logo" src="https://i.ibb.co/mcrkMWb/SR-Solutions.png" alt="logo" height="150" width="100">
-  </div>
-  <div class="navbar-menu">
-
-    <div class="navbar-end">
-      <% if user_signed_in? %>
-        <div class="navbar-start">
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              Payroll employees
-            </a>
-            <div class="navbar-dropdown">
-              <%= link_to 'Employees by name', employees_path, class: 'navbar-item' %>
-              <%= link_to 'Employees by dependency', employees_dependency_path, class: 'navbar-item' %>
-              <%= link_to 'Employees by held position', employees_held_position_path, class: 'navbar-item' %>
-              <%= link_to 'Employees graphics', employees_graphics_path, class: 'navbar-item' %>
-            </div>
-
-          </div>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              Entities info
-            </a>
-            <div class="navbar-dropdown">
-              <%= link_to 'Entities graphics', eps_entity_frecuency_path, class: 'navbar-item' %>
-              <%= link_to 'Employees by held position and eps', employees_eps_path, class: 'navbar-item' %>
-              <%= link_to 'Employees by held position and pension', employees_pension_path, class: 'navbar-item' %>
-            </div>
-          </div>
-
-
-        </div>
-        <%= link_to "Home",root_path,class: "navbar-item" %>
-        <%= link_to "Sign off",destroy_user_session_path, :method => :delete, class: "navbar-item" %>
-      <%else %>
-        <%= link_to "Login",new_user_session_path, class: "navbar-item" %>
-        <%= link_to "Sign up",new_user_registration_path, class: "navbar-item" %>
-      <%end %>
+<div class="container">
+  <nav class="navbar has-shadow is-white">
+    <div class="navbar-brand">
+      <img class="logo" src="https://i.ibb.co/mcrkMWb/SR-Solutions.png" alt="logo" height="150" width="100">
     </div>
-  </div>
-</nav>
+    <div class="navbar-menu">
+
+      <div class="navbar-end">
+        <% if user_signed_in? %>
+          <div class="navbar-start">
+            <%= link_to "Home",root_path,class: "navbar-item" %>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Payroll employees
+              </a>
+              <div class="navbar-dropdown">
+                <%= link_to 'Employees by name', employees_path, class: 'navbar-item' %>
+                <%= link_to 'Employees by dependency', employees_dependency_path, class: 'navbar-item' %>
+                <%= link_to 'Employees by held position', employees_held_position_path, class: 'navbar-item' %>
+                <%= link_to 'Employees graphics', employees_graphics_path, class: 'navbar-item' %>
+              </div>
+
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Entities info
+              </a>
+              <div class="navbar-dropdown">
+                <%= link_to 'Entities graphics', eps_entity_frecuency_path, class: 'navbar-item' %>
+                <%= link_to 'Employees by held position and eps', employees_eps_path, class: 'navbar-item' %>
+                <%= link_to 'Employees by held position and pension', employees_pension_path, class: 'navbar-item' %>
+              </div>
+            </div>
+          </div>
+
+          <%= link_to "Sign off",destroy_user_session_path, :method => :delete, class: "button is-danger navbar-item" %>
+        <%else %>
+          <%= link_to "Login",new_user_session_path, class: "navbar-item" %>
+          <%= link_to "Sign up",new_user_registration_path, class: "navbar-item" %>
+        <%end %>
+      </div>
+    </div>
+  </nav>
+</div>
