@@ -10,33 +10,42 @@
       </ul>
     </div>
   <% end %>
+<div class="column is-one-third has-text-left">
+    <div class="field">
+      <%= form.label :salary, class: "label" %>
+      <div class="control">
+          <%= form.number_field :salary, class: 'input' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :join_date, class: "label" %>
-    <%= form.date_select :join_date %>
-  </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :salary, class: "label" %>
-    <%= form.number_field :salary %>
-  </div>
+    <div class="field">
+      <%= form.label "Eps", class: "label" %>
+      <div class="select">
+        <%= form.select :eps_id, options_for_select(EpsEntity.order(:name_eps).pluck(:name_eps, :id)) %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label "Eps", class: "label" %>
-    <%= form.select :eps_id, options_for_select(EpsEntity.order(:name_eps).pluck(:name_eps, :id)) %>
-  </div>
+    <div class="field">
+      <%= form.label "Pensiones", class: "label" %>
+      <div class="select">
+        <%= form.select :afp_entity_id, options_for_select(AfpEntity.order(:afp_name).pluck(:afp_name, :id)) %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label "Pensiones", class: "label" %>
-    <%= form.select :afp_entity_id, options_for_select(AfpEntity.order(:afp_name).pluck(:afp_name, :id)) %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Charge", class: "label" %>
-    <%= form.grouped_collection_select :held_position_id, Dependency.order(:name_dependency), :held_positions,:name_dependency,:id, :name_position%>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="field">
+      <%= form.label "Charge", class: "label" %>
+      <div class="select">
+        <%= form.grouped_collection_select :held_position_id, Dependency.order(:name_dependency), :held_positions,:name_dependency,:id, :name_position%>
+      </div>
+    </div>
+    <div class="field is-grouped">
+      <div class="control">
+          <%= form.submit 'Create employee', class: 'button is-link'%>
+      </div>
+      <div class="control">
+        <%= link_to 'Cancel', home_index_path, class: 'button is-link is-light ' %>
+      </div>
+    </div>
   </div>
 <% end %>
