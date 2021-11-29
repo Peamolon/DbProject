@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  inability: false
+  vacations: false
+  disabilty_days: 1
+  vacations_days: 1
+  vacations_start_date: 2021-11-28
+  vacations_end_date: 2021-11-28
+  disability_start_date: 2021-11-28
+  disabily_end_date: 2021-11-28
+  employee_id: 1
+
+two:
+  inability: false
+  vacations: false
+  disabilty_days: 1
+  vacations_days: 1
+  vacations_start_date: 2021-11-28
+  vacations_end_date: 2021-11-28
+  disability_start_date: 2021-11-28
+  disabily_end_date: 2021-11-28
+  employee_id: 1
