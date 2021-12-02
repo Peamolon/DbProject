@@ -1,0 +1,15 @@
+<h1>Create new novelty</h1>
+<%= form_with(model: @novelty) do |form| %>
+  <div class="field">
+    <%= form.label 'Ingrese la cantidad de dias que trabajó en el mes' %>
+    <%= form.number_field :work_days_count %>
+  </div>
+
+  <div class="fiedl">
+    <%= form.label 'Ingrese la cantidad de dias que trabajó en el mes' %>
+    <%= form.number_field :work_days_count %>
+  </div>
+
+
+
+<% end %>
