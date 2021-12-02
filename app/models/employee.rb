@@ -6,6 +6,7 @@ class Employee < ApplicationRecord
   belongs_to :afp_entity, foreign_key: "afp_entity_id"
   belongs_to :dependency, foreign_key: "dependency_id"
   belongs_to :held_position, foreign_key: "held_position_id"
+  has_many :novelties
   #call_backs
   before_create :set_full_name
 
