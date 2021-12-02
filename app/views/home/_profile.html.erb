@@ -17,9 +17,13 @@
               <h6><strong>Arl: </strong><%= employee.afp_entity.afp_name %></h6>
               <h6><strong>Join date: </strong><%= employee.join_date %></h6>
               <h6><strong>Salary: </strong><%= employee.salary %></h6>
-              <div class="options" style = "">
-                <h6><%= link_to 'Create novelty', new_novelty_path %></h6>
-                <h6><%= link_to 'My novelties', new_novelty_path %></h6>
+              <div class="field is-grouped " >
+                <div class="control">
+                  <h6><%= link_to 'Create novelty', new_novelty_path, class: 'button is-white' %></h6>
+                </div>
+                <div class="control">
+                  <h6><%= link_to 'My novelties', novelties_path, class: 'button is-white'  %></h6>
+                </div>
               </div>
 
               <a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-dribbble"></i></a>

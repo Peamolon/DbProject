@@ -1,13 +1,53 @@
 <h1>Create new novelty</h1>
 <%= form_with(model: @novelty) do |form| %>
+  <% if @novelty.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@novelty.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+        <% @novelty.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label 'Type of novelty' %>
+    <%= form.select :novelty_type, options_for_select(["Disability Novelty","Vacations Novelty"]), include_blank: true %>
+  </div>
+
   <div class="field">
     <%= form.label 'Ingrese la cantidad de dias que trabajó en el mes' %>
-    <%= form.number_field :work_days_count %>
+    <%= form.number_field :work_days %>
+  </div>
+  <div class="fiedl">
+    <%= form.label 'Ingrese la fecha de inicio de vacaciones' %>
+    <%= form.date_field :vacations_start_date %>
+  </div>
+  <div class="fiedl">
+    <%= form.label 'Ingrese la fecha final de vacaciones' %>
+    <%= form.date_field :vacations_end_date %>
   </div>
 
   <div class="fiedl">
-    <%= form.label 'Ingrese la cantidad de dias que trabajó en el mes' %>
-    <%= form.number_field :work_days_count %>
+    <%= form.label 'Ingrese la fecha de inicio de incapacidad' %>
+    <%= form.date_field :disability_start_date %>
+  </div>
+  <div class="fiedl">
+    <%= form.label 'Ingrese la fecha final de incapacidad' %>
+    <%= form.date_field :disability_end_date %>
+  </div>
+
+  <div class="fiedl">
+    <%= form.label 'Ingrese el bono' %>
+    <%= form.number_field :bonus %>
+  </div>
+  <div class="fiedl">
+    <%= form.label 'Ingrese el bono de transporte' %>
+    <%= form.number_field :transport %>
+  </div>
+  <div class="field">
+    <%= form.submit 'Create' %>
   </div>
 
 

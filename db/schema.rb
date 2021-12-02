@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_044414) do
+ActiveRecord::Schema.define(version: 2021_12_02_043229) do
 
   create_table "afp_entities", force: :cascade do |t|
     t.string "afp_name"
@@ -53,17 +53,20 @@ ActiveRecord::Schema.define(version: 2021_11_29_044414) do
   end
 
   create_table "novelties", force: :cascade do |t|
-    t.boolean "inability"
-    t.boolean "vacations"
     t.integer "disabilty_days"
     t.integer "vacations_days"
     t.date "vacations_start_date"
     t.date "vacations_end_date"
     t.date "disability_start_date"
-    t.date "disabily_end_date"
+    t.date "disability_end_date"
     t.integer "employee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "work_days"
+    t.integer "bonus"
+    t.integer "transport"
+    t.string "novelty_type"
+    t.date "date"
   end
 
   create_table "users", force: :cascade do |t|

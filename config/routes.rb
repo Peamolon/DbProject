@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'employees/held_position', to: 'employees#by_held_position'
   get 'eps_entity/frecuency', to: 'eps_entities#by_frecuency'
   get 'home/index'
-  resources :novelties
+  resources :novelties, only: [:index, :new, :create]
   resources :employees
   devise_for :users
   root "home#index"
