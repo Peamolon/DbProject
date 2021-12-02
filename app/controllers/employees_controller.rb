@@ -112,6 +112,7 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(employee_params)
     @employee.user_id = current_user.id
+    @employee.join_date = Date.today
     @employee.dependency_id = @employee.held_position.dependency_id
     respond_to do |format|
       if @employee.save
