@@ -1,40 +1,26 @@
 <p id="notice"><%= notice %></p>
-<div class="container-centered">
-  <div class="section">
-    <div class="columns">
-      <div class="column has-text-centered">
-        <h1 class="title" style="color: black;"><%= @employee.full_name %></h1><br>
+<div class="container">
+  <section class="hero is-warning ">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="column is-4 is-offset-4">
+          <h3 class="title has-text-black"><%= @employee.full_name %></h3>
+          <hr class="navbar-divider">
+          <div class="box">
+            <form>
+              <div class="field">
+                <div class="control has-text-left">
+                  <h4><strong>Join date: </strong><%= @employee.join_date %></h4>
+                  <h4><strong>Join date: </strong><%= @employee.join_date %></h4>
+                  <h4><strong>Novelty: </strong> <%= @employee.novelty_id %></h4>
+                  <h4><strong>User: </strong> <%= @employee.user_id %></h4>
+                </div>
+              </div>
+              <%= link_to 'Back', employees_path, class: 'button is-link is-fullwidth' %>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-    <div id="app" class="row columns is-multiline">
-      <div v-for="card in cardData" key="card.id" class="column is-4">
-        <div class="card large">
-          <figure class="image is-16by9">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-              </div>
-              <div class="media-content">
-                <p class="title is-4 no-padding">
-                  <%= @employee.payroll_id %>
-                </p>
-              </div>
-            </div>
-            <div class="content">
-              <h4><strong>Join date: </strong><%= @employee.join_date %></h4>
-              <h4><strong>Novelty: </strong> <%= @employee.novelty_id %></h4>
-              <h4><strong>User: </strong> <%= @employee.user_id %></h4>
-              <div class="background-icon"><span class="icon-twitter"></span></div>
-              <div class="field is-grouped " >
-                <div class="control">
-                  <%= link_to 'Edit', edit_employee_path(@employee), class: 'button is-link is-fullwidth'%>
-                </div>
-                <div class="control">
-                  <%= link_to 'Back', employees_path, class: 'button is-link is-light is-fullwidth' %>
-                </div>
-              </div>
-            </div>
-          </div>
-    </figure>
-  </div>
+  </section>
 </div>

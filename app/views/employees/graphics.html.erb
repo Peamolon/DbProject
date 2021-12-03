@@ -1,4 +1,5 @@
 <div class="container has-text-centered">
+  <%= link_to 'PDF', employees_graphics_path(format: :pdf) %>
   <div class="field">
     <h1>Employee graphic by dependency</h1>
     <%= pie_chart Employee.joins(:dependency).group("dependencies.name_dependency").count %>

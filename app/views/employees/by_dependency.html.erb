@@ -1,6 +1,7 @@
 <div class="container has-text-centered">
   <p id="notice"><%= notice %></p>
   <h1>Employees</h1>
+  <%= link_to 'Generate PDF', employees_dependency_path(format: :pdf), class: 'button is-normal is-link is-light'%>
   <div class="control has-icons-left has-text-left">
     <%= form_with(url: '/employees/dependency', method: 'get', local: true) do |f| %>
       <%= f.label 'Dependency', class: 'label' %>
@@ -21,8 +22,6 @@
   </div>
   <div class="is-inline-block">
     <div>
-      <%= link_to 'Generate PDF', employees_dependency_path(format: :pdf), class: 'button is-normal is-link is-light'%>
-
     </div>
   </div>
 </div>

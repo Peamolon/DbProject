@@ -1,8 +1,10 @@
 <div class="container has-text-centered">
   <p id="notice"><%= notice %></p>
   <h1>Novelties</h1>
-  <%= link_to 'Generate PDF', employees_dependency_path(format: :pdf) %>
-  <div class="control has-icons-left has-text-left">
+  <%= link_to 'Generate PDF', employees_dependency_path(format: :pdf),  class: 'button is-normal is-link is-light'%>
+  <br>
+  <br>
+  <div class="control has-icons-left has-text-centered">
     <%= form_with(url: '/all_novelties/by_employee', method: 'get', local: true) do |f| %>
       <div class="field">
         <%= f.label 'Date less than', class: 'mt-2 mr-1' %>
@@ -21,6 +23,7 @@
     <% end %>
   </div>
 </div>
+
 
 <div class="container has-text-centered">
   <br>

@@ -1,6 +1,6 @@
 
 class NoveltiesController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @novelties = Novelty.where(employee_id: current_user.employee.id)
   end

@@ -2,82 +2,84 @@
   <h1>Create new novelty</h1>
 </div>
 <%= form_with(model: @novelty) do |form| %>
-  <section class= "hero is-warning">
-    <div class="hero-body">
-      <div class="container has-text-left">
-        <div class="column is-4 is-offset-4">
-          <div class="box">
-            <div class="form">
-              <% if @novelty.errors.any? %>
-                <div id="error_explanation">
-                  <h2><%= pluralize(@novelty.errors.count, "error") %> prohibited this employee from being saved:</h2>
+  <div class="container">
+    <section class= "hero is-warning">
+      <div class="hero-body">
+        <div class="container has-text-left">
+          <div class="column is-4 is-offset-4">
+            <div class="box">
+              <div class="form">
+                <% if @novelty.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@novelty.errors.count, "error") %> prohibited this employee from being saved:</h2>
 
-                  <ul>
-                    <% @novelty.errors.each do |error| %>
-                      <li><%= error.full_message %></li>
-                    <% end %>
-                  </ul>
+                    <ul>
+                      <% @novelty.errors.each do |error| %>
+                        <li><%= error.full_message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+                <div class="field">
+                  <%= form.label 'Type of novelty' %> <br>
+                  <div class="select">
+                    <%= form.select :novelty_type, options_for_select(["Disability Novelty","Vacations Novelty"]), include_blank: true %>
+                  </div>
                 </div>
-              <% end %>
-              <div class="field">
-                <%= form.label 'Type of novelty' %>
-                <div class="control">
-                  <%= form.select :novelty_type, options_for_select(["Disability Novelty","Vacations Novelty"]), include_blank: true %>
+                <div class="field">
+                  <%= form.label 'Enter the number of working days in the month' %>
+                  <div class="control">
+                    <%= form.number_field :work_days %>
+                  </div>
                 </div>
-              </div>
-              <div class="field">
-                <%= form.label 'Enter the number of working days in the month' %>
-                <div class="select">
-                  <%= form.number_field :work_days %>
-                </div>
-              </div>
 
-              <div class="field">
-                <%= form.label 'Vacations start date' %>
-                <div class="select">
-                  <%= form.date_field :vacations_start_date %>
+                <div class="field">
+                  <%= form.label 'Vacations start date' %>
+                  <div class="control">
+                    <%= form.date_field :vacations_start_date %>
+                  </div>
                 </div>
-              </div>
-              <div class="field">
-                <%= form.label 'Vacations end date' %>
-                <div class="select">
-                  <%= form.date_field :vacations_end_date %>
+                <div class="field">
+                  <%= form.label 'Vacations end date' %>
+                  <div class="control">
+                    <%= form.date_field :vacations_end_date %>
+                  </div>
                 </div>
-              </div>
-              <div class="field">
-                <%= form.label 'Inability start date' %>
-                <div class="select">
-                  <%= form.date_field :disability_start_date %>
+                <div class="field">
+                  <%= form.label 'Inability start date' %>
+                  <div class="control">
+                    <%= form.date_field :disability_start_date %>
+                  </div>
                 </div>
-              </div>
-              <div class="field">
-                <%= form.label 'Inability end date' %>
-                <div class="select">
-                  <%= form.date_field :disability_end_date %>
+                <div class="field">
+                  <%= form.label 'Inability end date' %>
+                  <div class="control">
+                    <%= form.date_field :disability_end_date %>
+                  </div>
                 </div>
-              </div>
-              <div class="field">
-                <%= form.label 'Enter the bonus' %>
-                <div class="select">
-                  <%= form.number_field :bonus %>
+                <div class="field">
+                  <%= form.label 'Enter the bonus' %>
+                  <div class="control">
+                    <%= form.number_field :bonus %>
+                  </div>
                 </div>
-              </div>
-              <div class="field">
-                <%= form.label 'Enter transport bonus' %>
-                <div class="select">
-                  <%= form.number_field :transport %>
+                <div class="field">
+                  <%= form.label 'Enter transport bonus' %>
+                  <div class="control">
+                    <%= form.number_field :transport %>
+                  </div>
                 </div>
-              </div>
 
-              <div class="field is-grouped " >
-                <div class="control">
-                  <%= form.submit 'Create', class: 'button is-link is-fullwidth'%>
+                <div class="field is-grouped " >
+                  <div class="control">
+                    <%= form.submit 'Create', class: 'button is-link is-fullwidth'%>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 <% end %>
