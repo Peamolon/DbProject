@@ -1,0 +1,47 @@
+<div class="">
+  <table class= "table is-striped is-hoverable has-text-black">
+    <thead class="has-background-warning">
+    <tr>
+      <th>Code</th>
+      <th>Novelty type</th>
+      <th>Date</th>
+      <th>Work days</th>
+      <th>Inability days</th>
+      <th>Vacations days</th>
+      <th>Vacations start date</th>
+      <th>Vacations end date</th>
+      <th>Disabilty start date</th>
+      <th>Disabilty end date</th>
+      <th>Bonus</th>
+      <th>Transport</th>
+      <th>Employee</th>
+      <th>Dependency</th>
+      <th>Held position</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @novelties.each do |novelty| %>
+      <tr>
+        <td><%= novelty.id %></td>
+        <td><%= novelty.novelty_type %></td>
+        <td><%= novelty.date %></td>
+        <td><%= novelty.work_days %></td>
+        <td><%= novelty.disabilty_days %></td>
+        <td><%= novelty.vacations_days %></td>
+        <td><%= novelty.vacations_start_date %></td>
+        <td><%= novelty.vacations_end_date %></td>
+        <td><%= novelty.disability_start_date %></td>
+        <td><%= novelty.disability_end_date %></td>
+        <td><%= novelty.bonus %></td>
+        <td><%= novelty.transport %></td>
+        <td><%= novelty.employee.full_name %></td>
+        <td><%= novelty.employee.held_position.dependency.name_dependency %></td>
+        <td><%= novelty.employee.held_position.name_position%></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <br>
+</div>
