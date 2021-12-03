@@ -1,7 +1,7 @@
 <div class="container has-text-centered">
     <h1>Employees</h1>
   <h5><strong>Number of employees: </strong><%= @employees.count %></h5>
-  <%= link_to 'PDF', employees_path(format: :pdf) %>
+  <%= link_to 'PDF', employees_path(params.merge(format: 'pdf')) %>
   <div class="control has-icons-left has-text-left">
     <%= form_with(url: '/employees', method: 'get', local: true) do |f| %>
       <%= f.label 'Filter', class: 'label' %>

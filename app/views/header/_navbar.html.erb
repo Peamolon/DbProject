@@ -31,6 +31,15 @@
                 <%= link_to 'Employees by held position and pension', employees_pension_path, class: 'navbar-item' %>
               </div>
             </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Novelties info
+              </a>
+              <div class="navbar-dropdown">
+                <%= link_to 'Novelties by date', all_novelties_path, class: 'navbar-item' %>
+                <%= link_to 'Novelties by dependency and charge', all_novelties_by_dependency_path, class: 'navbar-item' %>
+              </div>
+            </div>
           </div>
 
           <%= link_to "Sign off",destroy_user_session_path, :method => :delete, class: "button is-danger navbar-item" %>

@@ -71,11 +71,6 @@ class EmployeesController < ApplicationController
   end
 
 
-  def generate_pfd
-
-
-  end
-
   def by_held_position
     @way = params[:order_name]
     if @way.blank? || @way == "DEFAULT"
@@ -153,6 +148,7 @@ class EmployeesController < ApplicationController
     def set_employee
       @employee = Employee.find(params[:id])
     end
+
 
     # Only allow a list of trusted parameters through.
     def employee_params

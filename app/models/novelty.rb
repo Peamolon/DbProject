@@ -4,7 +4,6 @@ class Novelty < ApplicationRecord
   validates :bonus, presence: true
   validates :transport, presence: true
   validate :work_days_is_valid?
-  validates :vacations_days, presence: true, if: :is_vacations?
   validates :vacations_start_date, presence: true, if: :is_vacations?
   validates :vacations_end_date, presence: true, if: :is_vacations?
 

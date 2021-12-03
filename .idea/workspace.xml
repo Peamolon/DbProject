@@ -6,13 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="20681f88-5155-49a5-a162-88aa29b5f1f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/employees_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/employees_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/novelties_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/novelties_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/novelty.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/novelty.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/home/_profile.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/_profile.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/novelties/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/novelties/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/employees/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/employees/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/header/_navbar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/header/_navbar.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/novelties/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/novelties/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/development.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db/development.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +38,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="21W8kscsuQREf5xqjzAVbblyC4G" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -65,7 +69,7 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="DISABLE" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
         <COVERAGE_PATTERN ENABLED="true">
@@ -90,7 +94,7 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="DISABLE" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
         <COVERAGE_PATTERN ENABLED="true">
@@ -114,7 +118,7 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="DISABLE" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
         <COVERAGE_PATTERN ENABLED="true">
@@ -141,7 +145,7 @@
       <envs>
         <env name="RAILS_ENV" value="test" />
       </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="DISABLE" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
         <COVERAGE_PATTERN ENABLED="true">
@@ -172,7 +176,9 @@
       <workItem from="1638060848443" duration="692000" />
       <workItem from="1638073899924" duration="6704000" />
       <workItem from="1638237070592" duration="1333000" />
-      <workItem from="1638238422412" duration="13702000" />
+      <workItem from="1638238422412" duration="15942000" />
+      <workItem from="1638477592350" duration="1851000" />
+      <workItem from="1638479467503" duration="6715000" />
     </task>
     <task id="LOCAL-00001" summary="Adds new model Novlety">
       <created>1638411145037</created>

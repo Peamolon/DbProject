@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'eps_entity/frecuency', to: 'eps_entities#by_frecuency'
   get 'home/index'
   resources :novelties, only: [:index, :new, :create]
+  get 'all_novelties', to: 'novelties#all_novelties'
+  get 'all_novelties/by_dependency', to: 'novelties#novelties_by_dependency'
+
   resources :employees
   devise_for :users
   root "home#index"
