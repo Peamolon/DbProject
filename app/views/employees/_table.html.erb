@@ -24,8 +24,8 @@
           <td><%= employee.held_position.dependency.name_dependency %></td>
           <td><%= employee.eps_entity.name_eps %></td>
           <td><%= employee.afp_entity.afp_name %></td>
-          <td><%= link_to 'More', employee_path(employee.id) %></td>
-          <td><%= link_to 'Pdf', employee_path(employee.id, format: :pdf) %></td>
+          <td><%= link_to 'More', employee_path(employee.id), class: 'button is-small is-info is-light'%></td>
+          <td><%= link_to 'Pdf', employee_path(employee.id, format: :pdf), class: 'button is-small is-info is-light' %></td>
         </tr>
       <% end %>
     </tbody>

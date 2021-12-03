@@ -11,13 +11,28 @@ class NoveltiesController < ApplicationController
   def all_novelties
     @date_greater_than = "01/#{params["greater_date(2i)"]}/#{params["greater_date(1i)"]}"
     @date_less_than = "01/#{params["less_date(2i)"]}/#{params["less_date(1i)"]}"
-    @novelties = Novelty.where('date BETWEEN (?) AND (?)', @date_less_than.to_date, @date_greater_than.to_date).order(:date)
+    @novelties = Novelty.where('date BETWEEN (?) AND (?)', @date_less_than.to_date, @date_greater_than.to_date.end_of_month).order(:date)
   end
 
   def novelties_by_dependency
     @date_greater_than = "01/#{params["greater_date(2i)"]}/#{params["greater_date(1i)"]}"
     @date_less_than = "01/#{params["less_date(2i)"]}/#{params["less_date(1i)"]}"
-    @novelties = Novelty.where('date BETWEEN (?) AND (?)', @date_less_than.to_date, @date_greater_than.to_date).includes(:employee => [:held_position, :dependency]).order( 'dependencies.name_dependency','held_positions.name_position')
+    @novelties = Novelty.where('date BETWEEN (?) AND (?)', @date_less_than.to_date, @date_greater_than.to_date.end_of_month).includes(:employee => [:held_position, :dependency]).order( 'dependencies.name_dependency','held_positions.name_position')
+  end
+
+  def novelties_by_employee
+    @date_greater_than = "01/#{params["greater_date(2i)"]}/#{params["greater_date(1i)"]}"
+    @date_less_than = "01/#{params["less_date(2i)"]}/#{params["less_date(1i)"]}"
+    @novelties = Novelty.where('date BETWEEN (?) AND (?)', @date_less_than.to_date, @date_greater_than.to_date.end_of_month).where(employee_id: params[:employee_id].to_i)
+    if params[:employee_id].present?
+      @employee = Employee.find(params[:employee_id])
+      if @employee.join_date > @date_less_than.to_date
+        @worked_months = ((@employee.join_date..@date_greater_than.to_date.end_of_month).count/30)
+      else
+        @worked_months = ((@date_less_than.to_date..@date_greater_than.to_date.end_of_month).count/30)
+      end
+    end
+
   end
 
   def create

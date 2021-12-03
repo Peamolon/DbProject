@@ -1,6 +1,6 @@
 <div class="container has-text-centered">
   <h5><strong>Number of employees: </strong><%= @employees.count %></h5>
-  <%= link_to 'Generate PDF', employees_pension_path(format: :pdf) %>
+  <%= link_to 'Generate PDF', employees_pension_path(format: :pdf), class: 'button is-normal is-link is-light' %>
   <div class="control has-icons-left has-text-left">
     <%= form_with(url: '/employees/pension', method: 'get', local: true) do |f| %>
       <%= f.label 'Name order', class: 'label' %>
@@ -14,5 +14,10 @@
     <% end %>
   </div>
   <%= render 'table' %>
+  <div class="has-text-left">
+    <h5>
+      <strong>Number of employees: </strong><%= @employees.count %>
+    </h5>
+  </div>
   <br>
 </div>

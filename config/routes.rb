@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :novelties, only: [:index, :new, :create]
   get 'all_novelties', to: 'novelties#all_novelties'
   get 'all_novelties/by_dependency', to: 'novelties#novelties_by_dependency'
+  get 'all_novelties/by_employee', to: 'novelties#novelties_by_employee'
 
   resources :employees
   devise_for :users

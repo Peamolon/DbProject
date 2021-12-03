@@ -1,7 +1,6 @@
 <div class="container has-text-centered">
-    <h1>Employees</h1>
-  <h5><strong>Number of employees: </strong><%= @employees.count %></h5>
-  <%= link_to 'PDF', employees_path(params.merge(format: 'pdf')) %>
+  <h1>Employees</h1>
+  <%= link_to 'Generate PDF', employees_path(format: :pdf), class: 'button is-normal is-link is-light' %>
   <div class="control has-icons-left has-text-left">
     <%= form_with(url: '/employees', method: 'get', local: true) do |f| %>
       <%= f.label 'Filter', class: 'label' %>
@@ -15,5 +14,10 @@
     <% end %>
   </div>
   <%= render 'table' %>
+  <div class="has-text-left">
+    <h5>
+      <strong>Number of employees: </strong><%= @employees.count %>
+    </h5>
+  </div>
 </div>
-<%= link_to 'New Employee', new_employee_path(format: 'pdf') %>
+

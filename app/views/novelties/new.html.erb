@@ -1,55 +1,83 @@
-<h1>Create new novelty</h1>
+<div class="has-text-centered">
+  <h1>Create new novelty</h1>
+</div>
 <%= form_with(model: @novelty) do |form| %>
-  <% if @novelty.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@novelty.errors.count, "error") %> prohibited this employee from being saved:</h2>
+  <section class= "hero is-warning">
+    <div class="hero-body">
+      <div class="container has-text-left">
+        <div class="column is-4 is-offset-4">
+          <div class="box">
+            <div class="form">
+              <% if @novelty.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@novelty.errors.count, "error") %> prohibited this employee from being saved:</h2>
 
-      <ul>
-        <% @novelty.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+                  <ul>
+                    <% @novelty.errors.each do |error| %>
+                      <li><%= error.full_message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <div class="field">
+                <%= form.label 'Type of novelty' %>
+                <div class="control">
+                  <%= form.select :novelty_type, options_for_select(["Disability Novelty","Vacations Novelty"]), include_blank: true %>
+                </div>
+              </div>
+              <div class="field">
+                <%= form.label 'Enter the number of working days in the month' %>
+                <div class="select">
+                  <%= form.number_field :work_days %>
+                </div>
+              </div>
+
+              <div class="field">
+                <%= form.label 'Vacations start date' %>
+                <div class="select">
+                  <%= form.date_field :vacations_start_date %>
+                </div>
+              </div>
+              <div class="field">
+                <%= form.label 'Vacations end date' %>
+                <div class="select">
+                  <%= form.date_field :vacations_end_date %>
+                </div>
+              </div>
+              <div class="field">
+                <%= form.label 'Inability start date' %>
+                <div class="select">
+                  <%= form.date_field :disability_start_date %>
+                </div>
+              </div>
+              <div class="field">
+                <%= form.label 'Inability end date' %>
+                <div class="select">
+                  <%= form.date_field :disability_end_date %>
+                </div>
+              </div>
+              <div class="field">
+                <%= form.label 'Enter the bonus' %>
+                <div class="select">
+                  <%= form.number_field :bonus %>
+                </div>
+              </div>
+              <div class="field">
+                <%= form.label 'Enter transport bonus' %>
+                <div class="select">
+                  <%= form.number_field :transport %>
+                </div>
+              </div>
+
+              <div class="field is-grouped " >
+                <div class="control">
+                  <%= form.submit 'Create', class: 'button is-link is-fullwidth'%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-  <div class="field">
-    <%= form.label 'Type of novelty' %>
-    <%= form.select :novelty_type, options_for_select(["Disability Novelty","Vacations Novelty"]), include_blank: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label 'Ingrese la cantidad de dias que trabajó en el mes' %>
-    <%= form.number_field :work_days %>
-  </div>
-  <div class="fiedl">
-    <%= form.label 'Ingrese la fecha de inicio de vacaciones' %>
-    <%= form.date_field :vacations_start_date %>
-  </div>
-  <div class="fiedl">
-    <%= form.label 'Ingrese la fecha final de vacaciones' %>
-    <%= form.date_field :vacations_end_date %>
-  </div>
-
-  <div class="fiedl">
-    <%= form.label 'Ingrese la fecha de inicio de incapacidad' %>
-    <%= form.date_field :disability_start_date %>
-  </div>
-  <div class="fiedl">
-    <%= form.label 'Ingrese la fecha final de incapacidad' %>
-    <%= form.date_field :disability_end_date %>
-  </div>
-
-  <div class="fiedl">
-    <%= form.label 'Ingrese el bono' %>
-    <%= form.number_field :bonus %>
-  </div>
-  <div class="fiedl">
-    <%= form.label 'Ingrese el bono de transporte' %>
-    <%= form.number_field :transport %>
-  </div>
-  <div class="field">
-    <%= form.submit 'Create' %>
-  </div>
-
-
-
+  </section>
 <% end %>

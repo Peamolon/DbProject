@@ -1,17 +1,20 @@
 <div class="container has-text-centered">
   <p id="notice"><%= notice %></p>
   <h1>Novelties</h1>
-  <%= link_to 'Generate PDF', employees_dependency_path(format: :pdf) %>
-  <div class="control has-icons-left has-text-left">
+  <br>
+  <div class="control has-icons-left">
     <%= form_with(url: '/all_novelties/by_dependency', method: 'get', local: true) do |f| %>
-      <div class="field">
-        <%= f.label 'Date less than' %>
-        <%= f.date_select :less_date, { discard_day: true } %>
-        <%= f.label 'Date greater than' %>
+      <%= f.label 'Date less than', class: 'mt-2 mr-1' %>
+      <div class="select is-inline-flex">
+        <%= f.date_select :less_date, { discard_day: true }, class: 'select is-primary'%>
+      </div>
+      <%= f.label 'Date greater than', class: 'ml-6 mt-2 mr-1' %>
+      <div class="select is-inline-flex">
         <%= f.date_select :greater_date, { discard_day: true } %>
       </div>
       <%= f.submit 'Order', class: 'button is-black' %>
     <% end %>
   </div>
   <%= render 'table' %>
+  <%= link_to 'Generate PDF', employees_dependency_path(format: :pdf) %>
 </div>
