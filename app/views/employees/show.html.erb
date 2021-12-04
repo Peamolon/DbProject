@@ -10,10 +10,13 @@
             <form>
               <div class="field">
                 <div class="control has-text-left">
-                  <h4><strong>Join date: </strong><%= @employee.join_date %></h4>
-                  <h4><strong>Join date: </strong><%= @employee.join_date %></h4>
-                  <h4><strong>Novelty: </strong> <%= @employee.novelty_id %></h4>
-                  <h4><strong>User: </strong> <%= @employee.user_id %></h4>
+                  <h4>Id: <%= @employee.id %></h4>
+                  <h4>Join date: <%= @employee.join_date %></h4>
+                  <h4>Held position: <%= @employee.held_position.name_position  %></h4>
+                  <h4>Dependency: <%= @employee.held_position.dependency.name_dependency %></h4>
+                  <h4>Eps: <%= @employee.eps_entity.name_eps %></h4>
+                  <h4>Pension: <%= @employee.afp_entity.afp_name%></h4>
+                  <h4>Salary: <%= @employee.salary%></h4>
                 </div>
               </div>
               <%= link_to 'Back', employees_path, class: 'button is-link is-fullwidth' %>

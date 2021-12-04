@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20681f88-5155-49a5-a162-88aa29b5f1f3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/employees/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/employees/show.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +176,8 @@
       <workItem from="1638237070592" duration="1333000" />
       <workItem from="1638238422412" duration="15942000" />
       <workItem from="1638477592350" duration="1851000" />
-      <workItem from="1638479467503" duration="36347000" />
+      <workItem from="1638479467503" duration="37346000" />
+      <workItem from="1638587863188" duration="861000" />
     </task>
     <task id="LOCAL-00001" summary="Adds new model Novlety">
       <created>1638411145037</created>
